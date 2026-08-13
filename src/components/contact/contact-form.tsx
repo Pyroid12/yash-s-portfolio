@@ -103,6 +103,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [banner, setBanner] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileError, setTurnstileError] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   const turnstileRequired = IS_PRODUCTION && TURNSTILE_ENABLED;
@@ -254,15 +255,29 @@ export default function ContactForm() {
         />
 
         {TURNSTILE_ENABLED && (
-          <div className="overflow-hidden">
-            <Turnstile
-              ref={turnstileRef}
-              siteKey={TURNSTILE_SITE_KEY}
-              onSuccess={setTurnstileToken}
-              onExpire={() => setTurnstileToken("")}
-              onError={() => setTurnstileToken("")}
-              options={{ theme: "auto", size: "flexible" }}
-            />
+          <div className="flex flex-col gap-2">
+            <div className="overflow-hidden min-h-[65px]">
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={TURNSTILE_SITE_KEY}
+                onSuccess={(token) => {
+                  setTurnstileToken(token);
+                  setTurnstileError(false);
+                }}
+                onExpire={() => setTurnstileToken("")}
+                onError={() => {
+                  setTurnstileToken("");
+                  setTurnstileError(true);
+                }}
+                options={{ theme: "auto", size: "normal" }}
+              />
+            </div>
+            {turnstileError && (
+              <p role="alert" className="text-xs font-medium text-destructive">
+                Security check failed to load. Check that your domain is added in
+                Cloudflare Turnstile, then refresh the page.
+              </p>
+            )}
           </div>
         )}
 

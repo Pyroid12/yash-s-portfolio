@@ -8,7 +8,7 @@ export default function ContactPreview() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-20 px-6 md:px-8 scroll-mt-20 bg-card/30 border-t border-border/40"
+      className="py-14 md:py-20 px-6 md:px-8 scroll-mt-20 bg-card/30 border-t border-border/40"
     >
       <div className="mx-auto max-w-3xl text-center flex flex-col items-center gap-6">
         <SectionHeader

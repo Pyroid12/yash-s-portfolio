@@ -10,14 +10,14 @@ export default function AchievementsPreview() {
   return (
     <section
       id="achievements"
-      className="py-16 md:py-20 px-6 md:px-8 scroll-mt-20"
+      className="py-14 md:py-20 px-6 md:px-8 scroll-mt-20"
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
           <SectionHeader
             eyebrow="Achievements"
             title="Milestones"
-            description="A growing record of awards and recognitions."
+            description="Milestones and achievements will appear here as the journey continues."
             className="mb-0"
           />
           <Link

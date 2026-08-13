@@ -4,7 +4,7 @@ export const skillsData: SkillCategory[] = [
   {
     id: "languages",
     name: "Programming Languages",
-    skills: ["C", "Java", "Python"],
+    skills: ["C", "Java", "Python", "SQL"],
   },
   {
     id: "web",

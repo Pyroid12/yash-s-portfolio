@@ -15,7 +15,7 @@ export default function EducationPreview() {
   return (
     <section
       id="education"
-      className="py-16 md:py-20 px-6 md:px-8 scroll-mt-20 bg-card/30 border-y border-border/40"
+      className="py-14 md:py-20 px-6 md:px-8 scroll-mt-20 bg-card/30 border-y border-border/40"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Education" title="Current Degree" />

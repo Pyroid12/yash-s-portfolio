@@ -11,7 +11,7 @@ export default function CertificatesPreview() {
   return (
     <section
       id="certificates"
-      className="py-16 md:py-20 px-6 md:px-8 scroll-mt-20 bg-card/30 border-y border-border/40"
+      className="py-14 md:py-16 px-6 md:px-8 scroll-mt-20"
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
