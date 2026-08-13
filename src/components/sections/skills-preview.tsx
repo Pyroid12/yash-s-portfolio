@@ -31,7 +31,7 @@ export default function SkillsPreview() {
             </div>
             <div>
               <h3 className="text-base font-bold text-foreground sm:text-lg">
-                Verified Skills
+                Technical Skills
               </h3>
               <p className="text-sm text-muted-foreground mt-0.5">
                 Languages, web fundamentals, and developer tools.
