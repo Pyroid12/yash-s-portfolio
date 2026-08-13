@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { achievementsData } from "../../data/achievements";
 
@@ -29,7 +29,7 @@ export default function AchievementsPreview() {
           </Link>
         </div>
 
-        {latest.length > 0 ? (
+        {latest.length > 0 && (
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {latest.map((item) => (
               <li
@@ -47,20 +47,6 @@ export default function AchievementsPreview() {
               </li>
             ))}
           </ul>
-        ) : (
-          <div className="rounded-2xl border border-border bg-card/50 p-6 sm:p-8 flex items-start gap-4">
-            <div
-              className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/8 text-primary flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground">
-                Building, learning, and collecting milestones
-              </p>
-            </div>
-          </div>
         )}
       </div>
     </section>
