@@ -190,12 +190,12 @@ export default function GithubActivityGraph({
                 Public Activity Calendar
               </h3>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
-                Real public events from the unauthenticated GitHub REST API for{" "}
+                Public GitHub events for{" "}
                 <span className="font-semibold text-primary/90">
                   @{GITHUB_USERNAME}
                 </span>{" "}
-                — last 52 weeks. Intensity encodes daily event count; empty
-                cells mean no public activity captured (no fabrication).
+                over the last 52 weeks. Empty cells mean no public activity
+                captured — never fabricated.
               </p>
             </div>
           </div>
@@ -410,48 +410,17 @@ export default function GithubActivityGraph({
               <span className="uppercase tracking-wider">More</span>
             </div>
 
-            <div className="mt-4 md:mt-5 p-3 sm:p-4 rounded-2xl border border-border/80 bg-card/60 text-[11px] sm:text-xs text-muted-foreground space-y-1.5">
-              <p className="font-semibold text-foreground/85">About this chart</p>
-              <ul className="list-disc pl-5 space-y-1 leading-relaxed">
-                <li>
-                  Source · GitHub public <code>/events/public</code> REST
-                  endpoint — no token, 60 requests/hr IP-level rate limit,
-                  cached with Next.js revalidate (~1 hour).
-                </li>
-                <li>
-                  Scope · Activity shown is limited to public repos only and
-                  the last ~90 days reliably returned by the endpoint. Earlier
-                  cells in the 52-week window are genuinely empty — never
-                  invented.
-                </li>
-                <li>
-                  Event types counted · pushes, PRs, PR reviews + comments,
-                  issues, issue comments, creates/deletes, releases, wiki
-                  edits, commit comments, open-sourced. Excludes inbound
-                  WatchEvent/ForkEvent from third parties.
-                </li>
-                <li>
-                  Timezone · Daily buckets are grouped by UTC (the public API
-                  does not expose the local timezone set in your GitHub
-                  account). Depending on when you code, individual cells may
-                  shift <strong>±1 day</strong> relative to the native GitHub
-                  contribution calendar on your profile — the totals and
-                  7-day trends are still accurate.
-                </li>
-                <li>
-                  Intensity tiers reflect event count, not commits · 0 events
-                  (tier 0), 1 (tier 1), 2–3 (tier 2), 4–7 (tier 3), 8+
-                  (tier 4 — primary→secondary gradient). Never padded or
-                  fabricated.
-                </li>
-              </ul>
+            <div className="mt-4 md:mt-5 p-3 sm:p-4 rounded-2xl border border-border/80 bg-card/60 text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
+              <p>
+                Source · GitHub public events API (no token, ~1 hour cache).
+                Scope is limited to public repos and the recent window returned
+                by the API — earlier cells may be empty.
+              </p>
               {emptyHonestZeroWindow && (
                 <p className="mt-2 pt-2 border-t border-border/70 font-semibold text-amber-700 dark:text-amber-400">
-                  Note · API returned no public events in this window for @
-                  {GITHUB_USERNAME}. If you can see contributions on your real
-                  GitHub profile, the public endpoint is being rate-limited
-                  from this build environment — a clean rebuild or a deploy
-                  with stable outbound access will populate the grid.
+                  No public events returned in this window. If your GitHub
+                  profile shows activity, the API may be rate-limited — try
+                  again later or view your profile directly.
                 </p>
               )}
             </div>

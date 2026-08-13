@@ -7,7 +7,7 @@ import { personalData } from "../../data/personal";
 
 export const metadata: Metadata = createPageMetadata({
   title: `Certificates | ${personalData.name}`,
-  description: `Certifications earned by ${personalData.name}.`,
+  description: `Credentials and certifications from academic and professional learning.`,
   path: "/certificates",
 });
 
@@ -17,7 +17,7 @@ export default function CertificatesPage() {
       <PageHeader
         eyebrow="Certificates"
         title="Certificates"
-        description="Verified certifications from academic and professional learning."
+        description="Credentials and certifications from academic and professional learning."
       />
 
       <div className="mx-auto max-w-3xl px-6 md:px-8">

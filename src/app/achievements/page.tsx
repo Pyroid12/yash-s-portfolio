@@ -7,7 +7,7 @@ import { personalData } from "../../data/personal";
 
 export const metadata: Metadata = createPageMetadata({
   title: `Achievements | ${personalData.name}`,
-  description: `Achievements and milestones by ${personalData.name}.`,
+  description: `Verified achievements and milestones by ${personalData.name}.`,
   path: "/achievements",
 });
 
@@ -19,7 +19,7 @@ export default function AchievementsPage() {
       <PageHeader
         eyebrow="Achievements"
         title="Achievements"
-        description="Milestones, awards, and recognitions earned along the way."
+        description="Verified achievements and milestones will appear here as the journey continues."
       />
 
       <div className="mx-auto max-w-3xl px-6 md:px-8">
@@ -70,14 +70,10 @@ export default function AchievementsPage() {
             <div className="w-16 h-16 rounded-2xl bg-primary/8 text-primary flex items-center justify-center">
               <Sparkles className="w-8 h-8" aria-hidden="true" />
             </div>
-            <div className="max-w-md space-y-3">
-              <h2 className="text-xl font-extrabold tracking-tight text-foreground">
-                Building, learning, and collecting milestones
-              </h2>
+            <div className="max-w-md">
               <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-                New achievements will appear here as the journey continues.
-                This space is reserved for verified awards and recognitions —
-                nothing invented, nothing placeholder.
+                Verified achievements and milestones will appear here as the
+                journey continues.
               </p>
             </div>
           </div>
