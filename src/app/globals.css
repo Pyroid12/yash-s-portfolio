@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Tech Marble Light Mode - Default */
+  --background: hsl(0, 0%, 98%);
+  /* Marble white */
+  --foreground: hsl(220, 15%, 13%);
+  /* Charcoal */
+
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 15%, 13%);
+
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 15%, 13%);
+
+  --primary: hsl(217, 91%, 60%);
+  /* Electric Blue */
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  --secondary: hsl(262, 83%, 58%);
+  /* Violet */
+  --secondary-foreground: hsl(0, 0%, 100%);
+
+  --muted: hsl(220, 10%, 92%);
+  --muted-foreground: hsl(220, 10%, 40%);
+
+  --accent: hsl(217, 91%, 95%);
+  --accent-foreground: hsl(217, 91%, 35%);
+
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+
+  --border: hsl(220, 13%, 90%);
+  --input: hsl(220, 13%, 90%);
+  --ring: hsl(217, 91%, 60%);
+
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Tech Marble Dark Mode */
+    --background: hsl(220, 15%, 10%);
+    /* Charcoal */
+    --foreground: hsl(0, 0%, 98%);
+    /* Marble white text */
+
+    --card: hsl(220, 15%, 12%);
+    --card-foreground: hsl(0, 0%, 98%);
+
+    --popover: hsl(220, 15%, 12%);
+    --popover-foreground: hsl(0, 0%, 98%);
+
+    --primary: hsl(217, 91%, 60%);
+    /* Electric Blue */
+    --primary-foreground: hsl(0, 0%, 100%);
+
+    --secondary: hsl(262, 83%, 58%);
+    /* Violet */
+    --secondary-foreground: hsl(0, 0%, 100%);
+
+    --muted: hsl(220, 15%, 18%);
+    --muted-foreground: hsl(220, 10%, 65%);
+
+    --accent: hsl(220, 15%, 20%);
+    --accent-foreground: hsl(0, 0%, 98%);
+
+    --destructive: hsl(0, 62%, 40%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+
+    --border: hsl(220, 15%, 18%);
+    --input: hsl(220, 15%, 18%);
+    --ring: hsl(217, 91%, 60%);
+  }
+}
+
+.dark {
+  /* Manual class-based overrides */
+  --background: hsl(220, 15%, 10%);
+  --foreground: hsl(0, 0%, 98%);
+
+  --card: hsl(220, 15%, 12%);
+  --card-foreground: hsl(0, 0%, 98%);
+
+  --popover: hsl(220, 15%, 12%);
+  --popover-foreground: hsl(0, 0%, 98%);
+
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  --secondary: hsl(262, 83%, 58%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+
+  --muted: hsl(220, 15%, 18%);
+  --muted-foreground: hsl(220, 10%, 65%);
+
+  --accent: hsl(220, 15%, 20%);
+  --accent-foreground: hsl(0, 0%, 98%);
+
+  --destructive: hsl(0, 62%, 40%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+
+  --border: hsl(220, 15%, 18%);
+  --input: hsl(220, 15%, 18%);
+  --ring: hsl(217, 91%, 60%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Keyboard focus styles for focusable elements */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sr-only:focus,
+  .sr-only:focus-visible {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Tech Marble CSS Background */
+  .bg-marble {
+    position: relative;
+    background-color: var(--background);
+  }
+
+  .bg-marble::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    background-image: 
+      linear-gradient(30deg, transparent 40%, rgba(59, 130, 246, 0.02) 41%, rgba(59, 130, 246, 0.02) 42%, transparent 43%),
+      linear-gradient(135deg, transparent 50%, rgba(139, 92, 246, 0.02) 51%, rgba(139, 92, 246, 0.02) 52%, transparent 53%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+    transition: opacity 0.3s ease;
+  }
+
+  .dark .bg-marble::before {
+    opacity: 0.6;
+    background-image: 
+      linear-gradient(30deg, transparent 40%, rgba(59, 130, 246, 0.03) 41%, rgba(59, 130, 246, 0.03) 42%, transparent 43%),
+      linear-gradient(135deg, transparent 50%, rgba(139, 92, 246, 0.03) 51%, rgba(139, 92, 246, 0.03) 52%, transparent 53%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+  }
+}

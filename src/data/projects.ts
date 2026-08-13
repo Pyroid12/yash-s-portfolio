@@ -1,0 +1,118 @@
+import { Project } from "../types/project";
+
+export const projectsData: Project[] = [
+  {
+    id: "ai-health-record-translator",
+    slug: "ai-health-record-translator",
+    title: "AI Health Record Translator",
+    shortDescription:
+      "AI-powered web app that converts medical reports (PDF or image) into plain-language summaries with multi-language translation and PDF export.",
+    description:
+      "An AI-powered web application that turns confusing medical reports (PDF or image) into plain-language summaries — with translation into regional Indian languages and a downloadable PDF. Built for education, not diagnosis.",
+    problem:
+      "Medical reports often contain technical jargon that is difficult for patients to understand. Language barriers further complicate comprehension, especially in regional Indian languages. This app bridges that gap by providing simplified, translated summaries.",
+    features: [
+      "Secure JWT authentication with bcrypt password hashing",
+      "PDF, JPG, and PNG report upload via Cloudinary",
+      "OCR text extraction from images and PDFs using Tesseract.js",
+      "Gemini AI summaries in plain English with abnormal value flags",
+      "Suggested questions to ask your doctor",
+      "Multi-language translation: English, Hindi, Marathi, Tamil, Kannada, Telugu",
+      "Hospital-style formatted PDF export",
+      "Report history with search and delete",
+      "Medical disclaimer included with every summary (no diagnosis)",
+    ],
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "bcrypt",
+      "Tesseract.js",
+      "pdf-parse",
+      "Google Gemini API",
+      "Cloudinary",
+      "Multer",
+      "jsPDF",
+      "html2canvas",
+      "Vercel",
+      "Render",
+    ],
+    githubUrl: "https://github.com/Pyroid12/Ai-Health_Record_Translator",
+    liveUrl: "https://medtranslate-ai.vercel.app/",
+    featured: true,
+    order: 1,
+  },
+  {
+    id: "ai-thumbnail-generator",
+    slug: "ai-thumbnail-generator",
+    title: "AI Thumbnail Generator",
+    shortDescription:
+      "YouTube thumbnail generator using AI — prompt-to-image backgrounds via Pollinations.ai with a canvas-based editor for text and filters.",
+    description:
+      "A web app for generating YouTube thumbnails using AI. It uses Pollinations.ai to generate background images based on prompts, and includes a canvas-based editor to add text and filters.",
+    problem:
+      "Creating engaging YouTube thumbnails requires design skills and tools. This app simplifies the process by combining AI-generated backgrounds with an in-browser canvas editor.",
+    features: [
+      "Prompt-to-image generation (Gaming, Tech, Vlog styles)",
+      "Browser-based canvas editor for text overlays",
+      "Canvas filter effects",
+      "User credit system (10 credits per new user)",
+      "Dashboard to view past generations",
+      "JWT authentication with bcrypt",
+      "MongoDB persistence with local JSON fallback",
+    ],
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "HTML5 Canvas",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "bcrypt",
+      "Pollinations.ai API",
+    ],
+    githubUrl: "https://github.com/Pyroid12/ai-thumbnail-genrator",
+    liveUrl: "https://ai-thumbnail-genrator-64q1.vercel.app/",
+    featured: false,
+    order: 2,
+  },
+  {
+    id: "movie-recommendation-system",
+    slug: "movie-recommendation-system",
+    title: "Movie Recommendation System",
+    shortDescription:
+      "Flask-based content-filtering movie recommendation engine using scikit-learn with poster fetching via TMDB API.",
+    description:
+      "A Flask web application that recommends movies based on content similarity. Uses scikit-learn vectorization and similarity scoring on a movie dataset, with movie poster fetching via TMDB API.",
+    problem:
+      "Finding relevant movies to watch from large catalogs can be overwhelming. A content-based recommendation engine helps users discover films similar to ones they already enjoy.",
+    features: [
+      "Content-based movie recommendations via dropdown selection",
+      "scikit-learn vectorization with similarity scoring",
+      "Movie poster fetching via TMDB API (poster_fetcher.py)",
+      "Flask session-based login/logout",
+      "Pandas-based dataset loading (movies.csv)",
+    ],
+    technologies: [
+      "Python",
+      "Flask",
+      "pandas",
+      "scikit-learn",
+      "requests",
+      "TMDB API",
+      "Jinja2",
+      "HTML",
+      "CSS",
+    ],
+    githubUrl: "https://github.com/Pyroid12/movies_recommendation_system",
+    featured: false,
+    order: 3,
+  },
+];
