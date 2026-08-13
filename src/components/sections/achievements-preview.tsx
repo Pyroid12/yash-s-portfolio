@@ -59,9 +59,6 @@ export default function AchievementsPreview() {
               <p className="text-sm font-semibold text-foreground">
                 Building, learning, and collecting milestones
               </p>
-              <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                New achievements will appear here as the journey continues.
-              </p>
             </div>
           </div>
         )}

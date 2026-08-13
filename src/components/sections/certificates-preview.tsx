@@ -17,7 +17,7 @@ export default function CertificatesPreview() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
           <SectionHeader
             eyebrow="Certificates"
-            title="Recognitions"
+            title="Certificates"
             className="mb-0"
           />
           <Link
